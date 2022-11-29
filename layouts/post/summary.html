@@ -4,12 +4,18 @@
         {{ .Date | time.Format (default "January 2, 2006" .Site.Params.date_format) }}
       </div>
     {{ end }}
-    <h1 class="f3 near-black">
+    <h2 class="f3 near-black">
       <a href="{{ .RelPermalink }}" class="link black dim">
         {{ .Title }}
       </a>
-    </h1>
+    </h2>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       {{ .Summary  }}
+      {{ if .Truncated }}
+      <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+      <div>
+        <a href="{{ .RelPermalink }}">Läs hela artikeln här…</a>
+      </div>
+      {{ end }}
     </div>
   </div>
