@@ -4,7 +4,7 @@
 
 {{ range $list }}
   {{- $is_current := $current_page.IsMenuCurrent $menu_id . -}}
-  <li class="list f5 f4-ns fw4 dib {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
+  <li class="list f5 f4-ns fw4 {{ cond (eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
   {{- if .URL -}}
     <a class="hover-white no-underline white-90" href="{{ .URL }}">{{ .Name }}</a>
   {{- else -}}
